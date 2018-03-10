@@ -10,8 +10,6 @@ CF.Key.set(KEY)
 BASE_URL = 'https://westeurope.api.cognitive.microsoft.com/face/v1.0/'  # Replace with your regional Base URL
 CF.BaseUrl.set(BASE_URL)
 
-img_url = 'https://how-old.net/Images/faces2/main007.jpg'
-
 
 with picamera.PiCamera() as camera:
     camera.resolution = (1024, 768)

@@ -27,7 +27,7 @@ def getpic(filename):
     cam.stop()
     pygame.image.save(image, filename)
 
-@app.route('/')
+@app.route('/')3
 def index():
     return 'Hello, World!'
 
@@ -35,6 +35,20 @@ def index():
 def getImage():
     getpic("image1.jpg")
     return send_file("image1.jpg", mimetype='image/jpg')
+
+@app.route('/display/object')
+def checkObject():
+    getpic("image2.jpg")
+
+    url = 'http://51.143.186.87:5000/identify?objects=true'
+    payload = {'file': open('image2.jpg', 'rb')}
+    payload2 = {'location': "hack24"}
+    r = requests.post(url, files=payload, data=payload2)
+    if r.status_code == 200:
+        return r.text
+    else:
+        return Response(status=404)
+
 
 @app.route('/display/check_face')
 def checkFace():

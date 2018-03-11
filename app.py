@@ -15,17 +15,10 @@ pygame.init()
 pygame.camera.init()
 person_group_id = 'man'
 
-#def getpic(filename):
-#    with picamera.PiCamera() as camera:
-#        camera.resolution = (1024, 768)
-#        camera.framerate = 30
-#        time.sleep(1)
-#        camera.capture_sequence([
-#            filename,
-#             ]) 
+
 
 def getpic(filename):
-    cam = pygame.camera.Camera("/dev/video0",(1280,720))
+    cam = pygame.camera.Camera("/dev/video0",(1024,768))
     cam.start()
     image = cam.get_image()
     cam.stop()
@@ -57,3 +50,4 @@ def checkFace():
 
 if __name__ == '__main__':
     app.run(debug=True)
+    

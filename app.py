@@ -27,7 +27,7 @@ def getpic(filename):
     cam.stop()
     pygame.image.save(image, filename)
 
-@app.route('/')3
+@app.route('/')
 def index():
     return 'Hello, World!'
 

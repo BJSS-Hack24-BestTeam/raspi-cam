@@ -36,7 +36,7 @@ def getImage():
     getpic("image1.jpg")
     return send_file("image1.jpg", mimetype='image/jpg')
 
-@app.route('/display/object')
+@app.route('/display/objects')
 def checkObject():
     getpic("image2.jpg")
 

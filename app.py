@@ -36,7 +36,7 @@ def getImage():
     getpic("image1.jpg")
     return send_file("image1.jpg", mimetype='image/jpg')
 
-@app.route('/display/objects' methods=['OPTIONS'])
+@app.route('/display/objects', methods=['OPTIONS'])
 def options():
     return Response(status=200)
 

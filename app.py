@@ -7,6 +7,8 @@ import pygame
 import pygame.camera
 from pygame.locals import *
 from flask import send_file, request, Response
+from flask_cors import CORS
+
 #import picamera
 
 app = Flask(__name__)

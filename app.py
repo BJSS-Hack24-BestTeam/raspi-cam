@@ -46,7 +46,8 @@ def checkFace():
 
     url = 'http://51.143.186.87:5000/identify'
     payload = {'file': open('image2.jpg', 'rb')}
-    r = requests.post(url, files=payload)
+    payload2 = {'location': "hack24"}
+    r = requests.post(url, files=payload, data=payload2)
     if r.status_code == 200:
         return r.text
     else:

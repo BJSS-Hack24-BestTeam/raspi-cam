@@ -36,8 +36,12 @@ def getImage():
     getpic("image1.jpg")
     return send_file("image1.jpg", mimetype='image/jpg')
 
+@app.route('/display/objects' method='OPTIONS')
+def options():
+    return Response(status=200)
+
 @app.route('/display/objects')
-def checkObject():
+def checkObjects():
     getpic("image2.jpg")
 
     url = 'http://51.143.186.87:5000/identify?objects=true'

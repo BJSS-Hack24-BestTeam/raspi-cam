@@ -10,6 +10,7 @@ from flask import send_file, request, Response
 #import picamera
 
 app = Flask(__name__)
+CORS(app)
 
 pygame.init()
 pygame.camera.init()

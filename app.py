@@ -3,33 +3,33 @@ import json
 import requests
 from flask import Flask
 import cognitive_face as CF
-#import pygame
-#import pygame.camera
-#from pygame.locals import *
+import pygame
+import pygame.camera
+from pygame.locals import *
 from flask import send_file, request, Response
 #import picamera
 
 app = Flask(__name__)
 
-#pygame.init()
-#pygame.camera.init()
+pygame.init()
+pygame.camera.init()
 person_group_id = 'man'
 
-def getpic(filename):
-    with picamera.PiCamera() as camera:
-        camera.resolution = (1024, 768)
-        camera.framerate = 30
-        time.sleep(1)
-        camera.capture_sequence([
-            filename,
-            ]) 
-
 #def getpic(filename):
-#    cam = pygame.camera.Camera("/dev/video0",(1280,720))
-#    cam.start()
-#    image = cam.get_image()
-#    cam.stop()
-#    pygame.image.save(image, filename)
+#    with picamera.PiCamera() as camera:
+#        camera.resolution = (1024, 768)
+#        camera.framerate = 30
+#        time.sleep(1)
+#        camera.capture_sequence([
+#            filename,
+#             ]) 
+
+def getpic(filename):
+    cam = pygame.camera.Camera("/dev/video0",(1280,720))
+    cam.start()
+    image = cam.get_image()
+    cam.stop()
+    pygame.image.save(image, filename)
 
 @app.route('/')
 def index():
